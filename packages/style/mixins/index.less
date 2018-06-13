@@ -1,0 +1,32 @@
+//宽高
+.wh(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+//定位上下左右居中
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.make-classes(@prefix,@attr, @list) {
+  .iter(length(@list));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@list, @i);
+    @key: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    .@{prefix}-@{key} {
+      @{attr}: @value;
+    }
+  }
+}
+
+.px2rem(@attr, @pixels) {
+  @value: @pixels / 23.4375;
+  @{attr}: ~'@{value}rem';
+}
