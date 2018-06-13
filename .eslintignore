@@ -3,3 +3,6 @@
 /dist/
 /*.js
 /test/unit/coverage/
+/example/**/*
+/src/
+/lib/
