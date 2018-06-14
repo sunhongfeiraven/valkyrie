@@ -16,13 +16,15 @@
 }
 
 .page-wrapper h3 {
+  margin-top: 1em;
   font-size: 18px; /* no */
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 
 .page-wrapper p {
-  font-size: 16px; /* no */
-  margin-bottom: 12px; /* no */
+  text-align: justify;
+  font-size: 14px; /* no */
+  margin-bottom: 1em; /* no */
 }
 
 .page-title {
@@ -43,6 +45,9 @@
   width: 40px; /* no */
   height: 40px; /* no */
   text-align: center;
+}
+.page{
+  padding-bottom: 32px; /* no */
 }
 .page-back i {
   font-size: 24px; /* no */

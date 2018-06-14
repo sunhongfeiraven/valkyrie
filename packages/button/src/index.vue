@@ -1,12 +1,5 @@
 <template>
-  <button class="vk-button"
-          :style="{'border-radius':radius}"
-          :class="[`vk-button-${type}`,`vk-button-${size}`,{'disabled':disabled},{'active':active}]"
-          :disabled="disabled"
-          @touchstart="active = true"
-          @touchend="active = false"
-          @click="onClick"
-          >
+  <button class="vk-button" :style="{'border-radius':radius}" :class="[`vk-button-${type}`,`vk-button-${size}`,{'disabled':disabled},{'active':active}]" :disabled="disabled" @touchstart="onTouchStart" @touchend="onTouchEnd" @click="onClick">
     <label class="vk-button-text">
       <slot></slot>
     </label>
@@ -28,7 +21,7 @@ export default {
       type: String,
       default: 'default',
       validator(value) {
-        return ['default', 'danger', 'primary'].indexOf(value) > -1
+        return ['default', 'ghost', 'primary'].indexOf(value) > -1
       },
     },
     size: {
@@ -40,6 +33,14 @@ export default {
     },
   },
   methods: {
+    onTouchStart() {
+      if (this.disabled) return
+      this.active = true
+    },
+    onTouchEnd() {
+      if (this.disabled) return
+      this.active = false
+    },
     onClick(evt) {
       this.$emit('click', evt)
     },

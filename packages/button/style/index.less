@@ -7,29 +7,34 @@
   box-sizing: border-box;
   color: inherit;
   display: block;
-  font-size: 18px;
-  height: 41px;
+  font-size: 17px;
+  height: 50px;
   outline: 0;
   overflow: hidden;
   position: relative;
   text-align: center;
   border: none;
-  transition: 
-  
+  transition: all 0.3s;
+  font-weight: normal;
+  padding: 0 24px;
+  .ellipsis;
 
   &-default {
     color: @button-default-color;
     background-color: @button-default-background-color;
     border: 1px solid @button-default-border-color;
-    .active{
-      background-color: @button-default-background-active-color;
-    }
   }
 
   &-primary {
     color: @button-primary-color;
     background-color: @button-primary-background-color;
     border: 1px solid @button-primary-border-color;
+  }
+
+  &-ghost {
+    color: @button-ghost-color;
+    background-color: @button-ghost-background-color;
+    border: 1px solid @button-ghost-border-color;
   }
 
   &-large {
@@ -46,12 +51,31 @@
 
   &-small {
     display: inline-block;
-    font-size: 14px;
+    font-size: 13px;
     padding: 0 12px;
-    height: 33px;
+    height: 30px;
   }
 
-  .disabled {
-    opacity: 0.6;
+  &.active {
+    &::after {
+      opacity: 0.1;
+    }
+  }
+
+  &.disabled {
+    color: @button-disabled-color;
+    background-color: @button-disabled-background-color;
+    border: 1px solid @button-disabled-border-color;
+    .@{button-prefix-cls}-text {
+      opacity: 0.7;
+    }
+  }
+  
+  &::after {
+    .absoluteHover;
+    content: '';
+    background: #000000;
+    transition: opacity 0.3s;
+    opacity: 0;
   }
 }
