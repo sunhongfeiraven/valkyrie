@@ -56,7 +56,18 @@ const webpackConfig = {
       },
       {
         test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader'],
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' },
+          { loader: 'less-loader' },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 75,
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,

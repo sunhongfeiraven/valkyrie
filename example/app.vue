@@ -1,6 +1,6 @@
 <template>
   <div>
-    12313
+    <p>123</p>
     <router-link class="page-back" v-if="visible" :to="'/'">
       返回
     </router-link>
@@ -9,27 +9,10 @@
 </template>
 
 <style lang='less'>
-html,
-body {
-  background-color: #fafafa;
-  -webkit-overflow-scrolling: touch;
-  user-select: none;
-}
+@import './styles/base.less';
 
-a {
-  color: inherit;
-}
-
-.page-back {
-  display: inline-block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  i {
-    font-size: 24px;
-    line-height: 40px;
-  }
+p {
+  font-size: 12px;
 }
 </style>
 

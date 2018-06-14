@@ -3,6 +3,7 @@ import App from './app'
 import routes from './route'
 import { install as Valkyrie } from 'src/index'
 import VueRouter from 'vue-router'
+import './utils/rem'
 
 document.addEventListener(
   'DOMContentLoaded',
