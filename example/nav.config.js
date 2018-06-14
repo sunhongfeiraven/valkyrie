@@ -1,15 +1,11 @@
 export default [
   {
-    title: 'JS Components',
+    title: '数据录入 Data Entry',
     list: [
       {
         path: '/button',
         name: 'button',
       },
     ],
-  },
-  {
-    title: 'CSS Components',
-    list: [],
   },
 ]
