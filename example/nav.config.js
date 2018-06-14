@@ -3,8 +3,8 @@ export default [
     title: 'JS Components',
     list: [
       {
-        path: '/loading',
-        name: 'loading',
+        path: '/button',
+        name: 'button',
       },
     ],
   },

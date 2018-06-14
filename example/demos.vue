@@ -1,6 +1,6 @@
 <template>
   <section class="page-demo">
-    <div v-for="group in navs" :key="group">
+    <div v-for="group in navs" :key="group.title">
       <div class="page-title" v-text="group.title"></div>
       <div v-for="item in group.list" :to="item.path" :key="item.path">
         <div slot="title">
@@ -47,6 +47,7 @@ export default {
 
   created() {
     this.navs = navs;
+    console.log(navs)
   }
 };
 </script>

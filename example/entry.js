@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.common.js'
 import App from './app'
 import routes from './route'
 import { install as Valkyrie } from 'src/index'
@@ -6,25 +6,27 @@ import VueRouter from 'vue-router'
 
 document.addEventListener(
   'DOMContentLoaded',
-  function() {
+  () => {
     if (window.FastClick) window.FastClick.attach(document.body)
   },
-  false
+  false,
 )
 
 Vue.use(Valkyrie)
 Vue.use(VueRouter)
 
+console.log(routes)
+
 const router = new VueRouter({
   base: __dirname,
-  routes
+  routes,
 })
 
 new Vue({
   // eslint-disable-line
   el: '#app',
   render: h => h(App),
-  router
+  router,
 })
 
 let indexScrollTop = 0
@@ -36,7 +38,7 @@ router.beforeEach((route, redirect, next) => {
   next()
 })
 
-router.afterEach(route => {
+router.afterEach((route) => {
   if (route.path !== '/') {
     document.body.scrollTop = 0
   } else {

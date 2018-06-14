@@ -180,6 +180,10 @@ if (isDev) {
       test: /\.css$/,
       loaders: ['style-loader', 'css-loader', 'postcss-loader'],
     },
+    {
+      test: /\.less$/,
+      loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+    },
   )
   webpackConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),

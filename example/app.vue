@@ -1,7 +1,8 @@
 <template>
   <div>
+    12313
     <router-link class="page-back" v-if="visible" :to="'/'">
-      <i class="mintui mintui-back"></i>
+      返回
     </router-link>
     <router-view></router-view>
   </div>
