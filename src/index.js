@@ -1,10 +1,12 @@
 import Button from '../packages/button';
+import Spinner from '../packages/spinner';
 
 const version = '1.0.0';
 const install = function(Vue, config = {}) {
   if (install.installed) return;
 
   Vue.component(Button.name, Button);
+  Vue.component(Spinner.name, Spinner);
 };
 
 // auto install
@@ -15,5 +17,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  Button
+  Button,
+  Spinner
 };

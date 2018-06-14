@@ -8,4 +8,13 @@ export default [
       },
     ],
   },
+  {
+    title: '操作反馈 Feedback',
+    list: [
+      {
+        path: '/spinner',
+        name: 'spinner',
+      },
+    ],
+  },
 ]
