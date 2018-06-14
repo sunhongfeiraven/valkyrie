@@ -1,13 +1,13 @@
 <template>
   <section class="page-demo">
-    <div v-for="group in navs">
+    <div v-for="group in navs" :key="group">
       <div class="page-title" v-text="group.title"></div>
-      <mt-cell v-for="item in group.list" :to="item.path" is-link>
+      <div v-for="item in group.list" :to="item.path" :key="item.path">
         <div slot="title">
           <i :class="['indexicon', 'icon-' + item.icon]"></i>
           <span>{{ item.name }}</span>
         </div>
-      </mt-cell>
+      </div>
     </div>
   </section>
 </template>

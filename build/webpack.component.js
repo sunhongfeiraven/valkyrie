@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin') // see https://www.imooc.com/qadetail/260262?t=420578
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // see https://vue-loader.vuejs.org/zh/
 
 const Components = require('../components.json')
 const config = require('./config')
@@ -14,12 +14,12 @@ const webpackConfig = {
     publicPath: '/dist/',
     filename: '[name]/index.js',
     chunkFilename: '[id].js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: config.alias,
-    modules: ['node_modules']
+    modules: ['node_modules'],
   },
   externals: config.externals,
   module: {
@@ -28,67 +28,67 @@ const webpackConfig = {
         test: /\.(jsx?|babel|es6)$/,
         include: process.cwd(),
         exclude: config.jsexclude,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          preserveWhitespace: false
-        }
+          preserveWhitespace: false,
+        },
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json-loader',
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        loaders: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader']
+        loaders: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader?minimize=false'
+        loader: 'html-loader?minimize=false',
       },
       {
         test: /\.otf|ttf|woff2?|eot(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
+          name: path.posix.join('static', '[name].[hash:7].[ext]'),
+        },
       },
       {
         test: /\.svg(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
+          name: path.posix.join('static', '[name].[hash:7].[ext]'),
+        },
       },
       {
         test: /\.(gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
-      }
-    ]
+          name: path.posix.join('static', '[name].[hash:7].[ext]'),
+        },
+      },
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ]
+      minimize: true,
+    }),
+  ],
 }
 
 module.exports = webpackConfig

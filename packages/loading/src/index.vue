@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="loading" :class="className">
     <section class="loading-content">
     </section>
