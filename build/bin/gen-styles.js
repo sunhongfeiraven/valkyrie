@@ -4,17 +4,17 @@ const rimraf = require('rimraf')
 const through2 = require('through2')
 const merge2 = require('merge2')
 const babel = require('gulp-babel')
-const transformLess = require('./transformLess')
-const getBabelCommonConfig = require('./getBabelCommonConfig')
+const transformLess = require('antd-tools/lib/transformLess')
+const getBabelCommonConfig = require('antd-tools/lib/getBabelCommonConfig')
 
 const cwd = process.cwd()
 const libDir = path.join(cwd, 'lib')
 
-const babelify = (js) => {
+function babelify(js) {
   const babelConfig = getBabelCommonConfig()
   delete babelConfig.cacheDirectory
   babelConfig.plugins.push(require.resolve('babel-plugin-add-module-exports'))
-  const stream = js.pipe(babel(babelConfig)).pipe(through2.obj(function (file, encoding, next) {
+  const stream = js.pipe(babel(babelConfig)).pipe(through2.obj(function z(file, encoding, next) {
     this.push(file.clone())
     if (file.path.match(/\/style\/index\.js/)) {
       const content = file.contents.toString(encoding)
@@ -31,7 +31,7 @@ const babelify = (js) => {
   return stream.pipe(gulp.dest(libDir))
 }
 
-const style = () => {
+function style() {
   rimraf.sync(libDir)
   const less = gulp
     .src(['packages/**/*.less'])
