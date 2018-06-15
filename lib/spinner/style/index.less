@@ -1,0 +1,19 @@
+@import '../../style/index.less';
+@spinner-prefix-cls: ~'@{prefix}-spinner';
+
+.@{spinner-prefix-cls} {
+  &-snake {
+    animation: vk-spinner-rotate 0.8s infinite linear;
+    border: 2px solid transparent; /* no */
+    border-radius: 50%;
+  }
+}
+
+@keyframes vk-spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
