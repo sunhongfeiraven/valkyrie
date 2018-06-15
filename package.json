@@ -2,7 +2,8 @@
   "name": "valkyrie",
   "version": "1.0.0",
   "description": "A Mobile Component Library for Vue.js.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "scripts": {
     "build:file": "node build/bin/build-entry.js",
     "build:component": "webpack --config build/webpack.component.js --quiet",
