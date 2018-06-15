@@ -2,13 +2,13 @@
   "name": "valkyrie",
   "version": "1.0.0",
   "description": "A Mobile Component Library for Vue.js.",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
+  "main": "lib/valkyrie.common.js",
   "scripts": {
     "build:file": "node build/bin/build-entry.js",
     "build:component": "webpack --config build/webpack.component.js --quiet",
+    "build:common": "webpack --config build/webpack.common.js --quiet",
     "build:style": "node build/bin/gen-styles",
-    "build": "npm run clean && npm run build:file && npm run build:style && npm run build:component",
+    "build": "npm run clean && npm run build:file && npm run build:style && npm run build:component && npm run build:common",
     "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
     "clean": "rimraf lib"
   },
