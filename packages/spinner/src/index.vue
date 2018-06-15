@@ -1,5 +1,5 @@
 <template>
-  <div class="vk-spinner-snake" :style="{
+  <div class="vk-spinner-snake" v-bind="$attrs" :style="{
           'border-top-color': spinnerColor,
           'border-left-color': spinnerColor,
           'border-bottom-color': spinnerColor,

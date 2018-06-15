@@ -16,8 +16,6 @@ document.addEventListener(
 Vue.use(Valkyrie)
 Vue.use(VueRouter)
 
-console.log(routes)
-
 const router = new VueRouter({
   base: __dirname,
   routes,

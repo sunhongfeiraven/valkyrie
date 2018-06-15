@@ -64,8 +64,7 @@ export default {
     }
   },
   created() {
-    this.navs = navs;
-    console.log(navs)
+    this.navs = navs
   }
 }
 </script>

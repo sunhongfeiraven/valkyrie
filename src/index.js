@@ -1,5 +1,6 @@
 import Button from '../packages/button';
 import Spinner from '../packages/spinner';
+import Indicator from '../packages/indicator';
 
 const version = '1.0.0';
 const install = function(Vue, config = {}) {
@@ -7,6 +8,7 @@ const install = function(Vue, config = {}) {
 
   Vue.component(Button.name, Button);
   Vue.component(Spinner.name, Spinner);
+  Vue.$indicator = Vue.prototype.$indicator = Indicator;
 };
 
 // auto install
@@ -18,5 +20,6 @@ export {
   install,
   version,
   Button,
-  Spinner
+  Spinner,
+  Indicator
 };

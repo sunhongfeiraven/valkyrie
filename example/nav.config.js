@@ -15,6 +15,10 @@ export default [
         path: '/spinner',
         name: 'spinner',
       },
+      {
+        path: '/indicator',
+        name: 'indicator',
+      },
     ],
   },
 ]

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:file": "node build/bin/build-entry.js",
-    "build:component": "webpack --config build/webpack.component.js",
+    "build:component": "webpack --config build/webpack.component.js --quiet",
     "build:style": "node build/bin/gen-styles",
     "build": "npm run clean && npm run build:file && npm run build:style && npm run build:component",
     "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
