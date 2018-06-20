@@ -1,6 +1,7 @@
 import Button from '../packages/button';
 import Spinner from '../packages/spinner';
 import Indicator from '../packages/indicator';
+import Scroll from '../packages/scroll';
 
 const version = '1.0.0';
 const install = function(Vue, config = {}) {
@@ -8,6 +9,7 @@ const install = function(Vue, config = {}) {
 
   Vue.component(Button.name, Button);
   Vue.component(Spinner.name, Spinner);
+  Vue.component(Scroll.name, Scroll);
   Vue.$indicator = Vue.prototype.$indicator = Indicator;
 };
 
@@ -21,5 +23,6 @@ export {
   version,
   Button,
   Spinner,
-  Indicator
+  Indicator,
+  Scroll
 };

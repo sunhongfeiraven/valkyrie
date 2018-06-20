@@ -13,6 +13,7 @@ export default {
     if (instance.visible) return
     instance.text = typeof options === 'string' ? options : options.text || ''
     instance.type = options.type || 'default'
+    instance.size = options.size || 32
     document.body.appendChild(instance.$el)
 
     Vue.nextTick(() => {

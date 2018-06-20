@@ -18,6 +18,7 @@ export default {
   props: {
     text: String,
     type: { type: String, default: 'default' },
+    size: { type: Number, default: 32 },
   },
   data() {
     return {

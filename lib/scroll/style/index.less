@@ -1,0 +1,27 @@
+@import '../../style/index.less';
+@scroll-prefix-cls: ~'@{prefix}-scroll';
+
+.@{scroll-prefix-cls} {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &-container {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &-action-block {
+    position: relative;
+    width: 100%;
+  }
+
+  &-default-text {
+    height: 100%;
+    line-height: 50px; /* no */
+    text-align: center;
+  }
+}
